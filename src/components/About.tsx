@@ -58,29 +58,29 @@ export const About: React.FC<AboutProps> = ({ settings }) => {
                 referrerPolicy="no-referrer"
               />
             ) : (
-              // Pristine creative brutalist visual layout placeholder
-              <div className="w-full h-full flex flex-col justify-between p-8 bg-brand-accent/5 select-none relative grain-overlay">
-                {/* Vintage wireframe lines */}
-                <div className="absolute inset-0 border-2 border-dashed border-brand-black/10 m-4 pointer-events-none" />
-
-                <div className="flex justify-between items-start z-10">
-                  <span className="font-mono text-xs font-bold text-brand-accent uppercase tracking-widest border border-brand-black/30 px-2 py-0.5">
-                    Handoff Slot
-                  </span>
-                  <span className="font-mono text-xs text-brand-muted font-bold">4:5 Aspect Ratio</span>
-                </div>
-
-                <div className="flex flex-col items-center justify-center py-12 z-10">
-                  <h3 className="font-display text-8xl text-brand-black/10 group-hover:text-brand-accent/20 transition-colors tracking-tight select-none">
-                    OM
-                  </h3>
-                  <div className="font-mono text-sm font-bold text-brand-black mt-2 text-center max-w-[200px]">
-                    Munachi's Portrait Placeholder
+              // Clean profile image placeholder — upload your photo via the sandbox toolbar
+              <div className="w-full h-full flex flex-col items-center justify-center bg-brand-light-gray select-none relative overflow-hidden">
+                {/* Background diagonal texture */}
+                <div
+                  className="absolute inset-0 opacity-[0.04]"
+                  style={{
+                    backgroundImage: "repeating-linear-gradient(45deg, #000 0, #000 1px, transparent 0, transparent 50%)",
+                    backgroundSize: "10px 10px",
+                  }}
+                />
+                {/* Monogram */}
+                <div className="relative z-10 flex flex-col items-center gap-4">
+                  <div className="w-24 h-24 rounded-full bg-brand-accent/10 border-4 border-brand-accent/20 flex items-center justify-center">
+                    <span className="font-display text-4xl text-brand-accent/40 font-bold">OM</span>
                   </div>
-                </div>
-
-                <div className="z-10 text-center font-mono text-xs font-semibold text-brand-muted leading-tight border-t-2 border-dashed border-brand-black/20 pt-4 bg-white/50 backdrop-blur-sm p-3">
-                  Upload custom photo URL in Munachi's Launch Center below
+                  <div className="text-center">
+                    <p className="font-mono text-xs font-bold text-brand-black uppercase tracking-widest">
+                      Orji Munachi
+                    </p>
+                    <p className="font-mono text-[10px] text-brand-muted mt-1">
+                      Upload your portrait above
+                    </p>
+                  </div>
                 </div>
               </div>
             )}

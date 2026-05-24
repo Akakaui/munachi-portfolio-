@@ -1,7 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { PortfolioSettings } from "../types";
+
+// Animated counter — counts from 0 to the numeric portion of a string
+const AnimatedCounter: React.FC<{ value: string }> = ({ value }) => {
+  const [displayVal, setDisplayVal] = useState("0");
+
+  useEffect(() => {
+    const numStr = value.replace(/[^0-9]/g, "");
+    const target = parseInt(numStr, 10);
+    if (isNaN(target)) { setDisplayVal(value); return; }
+    const suffix = value.replace(/[0-9,]/g, "");
+    const hasCommas = value.includes(",");
+    const startTime = performance.now();
+    const duration = 1400;
+    let frameId: number;
+    const animate = (now: number) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = progress * (2 - progress);
+      const current = Math.floor(eased * target);
+      const formatted = hasCommas ? current.toLocaleString("en-US") : current.toString();
+      setDisplayVal(`${formatted}${suffix}`);
+      if (progress < 1) frameId = requestAnimationFrame(animate);
+      else setDisplayVal(value);
+    };
+    frameId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(frameId);
+  }, [value]);
+
+  return <span>{displayVal}</span>;
+};
 
 interface HeroProps {
   settings: PortfolioSettings;
@@ -64,7 +94,7 @@ export const Hero: React.FC<HeroProps> = ({ settings }) => {
           </h2>
 
           {/* Main Huge Tagline */}
-          <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl tracking-tight leading-none uppercase max-w-4xl font-normal text-brand-black mt-1">
+          <h1 className="font-display text-[10vw] sm:text-7xl lg:text-8xl tracking-tight leading-[0.95] uppercase max-w-4xl font-normal text-brand-black mt-1">
             {settings.tagline}
           </h1>
 
@@ -81,17 +111,19 @@ export const Hero: React.FC<HeroProps> = ({ settings }) => {
           </div>
 
           {/* Primary & Secondary Call to Actions */}
-          <div className="flex flex-wrap gap-4 sm:gap-6 mt-6">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-6 w-full sm:w-auto">
             <a
-              href={mailLink}
-              className="px-8 py-4 bg-brand-accent text-white font-mono text-base uppercase font-bold border-4 border-brand-black brutalist-shadow-lg hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[16px_16px_0px_0px_rgba(0,0,0,1)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-200"
+              href={settings.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-8 py-4 bg-brand-accent text-white font-mono text-base uppercase font-bold border-4 border-brand-black brutalist-shadow-lg hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[16px_16px_0px_0px_rgba(0,0,0,1)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 text-center"
             >
               Hire Me
             </a>
             <a
               href="#work"
               onClick={handleSeeWork}
-              className="px-8 py-4 bg-white text-brand-black font-mono text-base uppercase font-bold border-4 border-brand-black brutalist-shadow-lg hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[16px_16px_0px_0px_var(--color-brand-accent)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[4px_4px_0px_0px_var(--color-brand-accent)] transition-all duration-200 flex items-center gap-2"
+              className="w-full sm:w-auto px-8 py-4 bg-white text-brand-black font-mono text-base uppercase font-bold border-4 border-brand-black brutalist-shadow-lg hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[16px_16px_0px_0px_var(--color-brand-accent)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[4px_4px_0px_0px_var(--color-brand-accent)] transition-all duration-200 flex items-center justify-center gap-2 text-center"
             >
               See My Work <ArrowRight className="w-5 h-5 stroke-[2.5]" />
             </a>
@@ -111,7 +143,7 @@ export const Hero: React.FC<HeroProps> = ({ settings }) => {
               className="border-4 border-brand-black p-6 bg-white brutalist-shadow flex flex-col justify-between group hover:translate-y-[-4px] transition-transform duration-200"
             >
               <div className="font-display text-4xl sm:text-5xl text-brand-accent tracking-tight select-all">
-                {stat.value}
+                <AnimatedCounter value={stat.value} />
               </div>
               <div className="font-mono text-xs uppercase tracking-wider font-bold text-brand-black mt-3 border-t border-brand-black/20 pt-2 flex items-center justify-between">
                 <span>{stat.label}</span>

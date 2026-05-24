@@ -23,21 +23,9 @@ interface SkillsToolsProps {
 }
 
 export const SkillsTools: React.FC<SkillsToolsProps> = ({ pillars, tools }) => {
-  const [activeCategory, setActiveCategory] = useState<string>("all");
-
-  const categories = [
-    { key: "all", label: "All Tools" },
-    { key: "design", label: "Design & Video" },
-    { key: "platforms", label: "Social Platforms" },
-    { key: "ads", label: "Paid Ads" },
-    { key: "analytics", label: "Analytics" },
-    { key: "scheduling", label: "Scheduling" }
-  ];
-
   // Helper to get the correct SVG component for a tool key
   const renderToolLogo = (key: string, isHovered: boolean) => {
-    const sizeClass = "w-12 h-12 transition-transform duration-300 group-hover:scale-110";
-    // brand colors if hovered, otherwise clean high contrast black
+    const sizeClass = "w-8 h-8 transition-transform duration-300 group-hover:scale-110";
     switch (key) {
       case "canva":
         return <CanvaLogo className={sizeClass} color={isHovered ? "#00C4CC" : "currentColor"} />;
@@ -71,14 +59,27 @@ export const SkillsTools: React.FC<SkillsToolsProps> = ({ pillars, tools }) => {
     }
   };
 
-  const filteredTools =
-    activeCategory === "all" ? tools : tools.filter((t) => t.category === activeCategory);
-
   return (
     <section
       id="skills"
-      className="px-4 sm:px-6 lg:px-8 py-20 bg-brand-light-gray border-b-4 border-brand-black"
+      className="px-4 sm:px-6 lg:px-8 py-20 bg-brand-light-gray border-b-4 border-brand-black overflow-hidden"
     >
+      {/* Injecting infinite marquee keyframe animations */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes marquee-scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-marquee-scroll {
+          display: flex;
+          width: max-content;
+          animation: marquee-scroll 35s linear infinite;
+        }
+        .marquee-container:hover .animate-marquee-scroll {
+          animation-play-state: paused;
+        }
+      `}} />
+
       <div className="max-w-7xl mx-auto">
         {/* Header Segment */}
         <div className="flex flex-col gap-4 mb-16 max-w-3xl">
@@ -118,69 +119,79 @@ export const SkillsTools: React.FC<SkillsToolsProps> = ({ pillars, tools }) => {
           ))}
         </div>
 
-        {/* Divider text brand strip banner */}
-        <div className="w-full bg-brand-black py-3 mb-16 border-2 border-brand-black text-center flex justify-around select-none">
-          <span className="font-mono text-xs font-bold text-white tracking-widest uppercase">
-            Meta Partner Certified
-          </span>
-          <span className="font-mono text-xs font-semibold text-brand-accent">✦</span>
-          <span className="font-mono text-xs font-bold text-white tracking-widest uppercase">
-            Data-Backed Workflows
-          </span>
-          <span className="font-mono text-xs font-semibold text-brand-accent">✦</span>
-          <span className="font-mono text-xs font-bold text-white tracking-widest uppercase">
-            Physical Product Specialists
-          </span>
+        {/* Full-width scrolling ticker banner */}
+        <div className="w-full bg-brand-black py-3 mb-16 border-2 border-brand-black overflow-hidden select-none">
+          <div className="animate-marquee-scroll gap-0 px-0" style={{ animationDuration: '28s' }}>
+            {Array.from({ length: 8 }).map((_, i) => (
+              <span key={i} className="font-mono text-[10px] sm:text-xs font-extrabold text-white tracking-[0.18em] uppercase pr-10 flex-shrink-0">
+                ORGANIC REACH STRATEGIES
+                <span className="text-brand-accent mx-4">✦</span>
+                REVENUE-DRIVEN CONTENT
+                <span className="text-brand-accent mx-4">✦</span>
+                PHYSICAL BRAND EXPERTS
+                <span className="text-brand-accent mx-4">✦</span>
+              </span>
+            ))}
+          </div>
         </div>
 
-        {/* Bottom Half: Categorized Tool Grid */}
-        <div className="flex flex-col gap-8">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
-            <h3 className="font-display text-2xl uppercase text-brand-black">
-              Software Stack
-            </h3>
+        {/* Bottom Half: Infinitely Scrolling Software Stack Marquee */}
+        <div className="flex flex-col gap-6">
+          <h3 className="font-display text-2xl uppercase text-brand-black px-1">
+            Software Stack
+          </h3>
 
-            {/* Category Filter Pills */}
-            <div className="flex flex-wrap gap-2">
-              {categories.map((cat) => (
-                <button
-                  key={cat.key}
-                  onClick={() => setActiveCategory(cat.key)}
-                  className={`px-4 py-1.5 font-mono text-xs uppercase font-bold border-2 border-brand-black transition-all ${
-                    activeCategory === cat.key
-                      ? "bg-brand-accent text-white"
-                      : "bg-white text-brand-black hover:bg-brand-light-gray"
-                  } brutalist-shadow-sm cursor-pointer`}
-                >
-                  {cat.label}
-                </button>
+          {/* Marquee Ticker Track */}
+          <div className="w-full border-4 border-brand-black bg-white overflow-hidden py-5 select-none marquee-container brutalist-shadow">
+            <div className="animate-marquee-scroll gap-6 px-3">
+              
+              {/* Buffer Copy 1 */}
+              {tools.map((tool, idx) => (
+                <MarqueeItem
+                  key={`marq-1-${tool.name}-${idx}`}
+                  tool={tool}
+                  renderToolLogo={renderToolLogo}
+                />
               ))}
-            </div>
-          </div>
 
-          {/* Tools Grid displaying genuine SVG brand logos */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-6">
-            {filteredTools.map((tool) => {
-              const [hovered, setHovered] = useState(false);
-              return (
-                <div
-                  key={tool.name}
-                  onMouseEnter={() => setHovered(true)}
-                  onMouseLeave={() => setHovered(false)}
-                  className="bg-white border-2 border-brand-black p-6 flex flex-col items-center justify-center text-center brutalist-shadow-hover transition-transform group"
-                >
-                  <div className="mb-4 text-brand-black flex items-center justify-center h-14">
-                    {renderToolLogo(tool.iconKey, hovered)}
-                  </div>
-                  <div className="font-mono text-xs font-bold text-brand-black uppercase select-none">
-                    {tool.name}
-                  </div>
-                </div>
-              );
-            })}
+              {/* Buffer Copy 2 (Enables perfect seamless loop reset) */}
+              {tools.map((tool, idx) => (
+                <MarqueeItem
+                  key={`marq-2-${tool.name}-${idx}`}
+                  tool={tool}
+                  renderToolLogo={renderToolLogo}
+                />
+              ))}
+
+            </div>
           </div>
         </div>
       </div>
     </section>
+  );
+};
+
+// Isolated interactive marquee item to manage its own hover color toggle
+interface MarqueeItemProps {
+  tool: ToolItem;
+  renderToolLogo: (key: string, isHovered: boolean) => React.ReactNode;
+}
+
+const MarqueeItem: React.FC<MarqueeItemProps> = ({ tool, renderToolLogo }) => {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="flex-shrink-0 flex items-center gap-3 px-5 py-3 border-2 border-brand-black bg-white brutalist-shadow-sm hover:translate-y-[-2px] transition-transform duration-200 select-none cursor-pointer group"
+    >
+      <div className="w-8 h-8 flex items-center justify-center">
+        {renderToolLogo(tool.iconKey, hovered)}
+      </div>
+      <span className="font-mono text-xs font-extrabold text-brand-black uppercase">
+        {tool.name}
+      </span>
+    </div>
   );
 };

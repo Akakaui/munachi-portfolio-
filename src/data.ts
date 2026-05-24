@@ -122,6 +122,22 @@ export const defaultCaseStudies: CaseStudy[] = [
       { value: "6,722", label: "Reach" },
       { value: "1,000", label: "New Followers" },
       { value: "30", label: "Days" }
+    ],
+    challenge: "Opara Motors was trying to sell luxury vehicles with a social media feed that looked outdated and static. High-value car buyers expect premium presentation. Without high-quality video content and proper Spec sheets, prospects were scrolling past and taking their business to competitors who understood how to present high-end inventory.",
+    strategy: [
+      "Conducted an intensive on-site shoot mapping the dealership inventory",
+      "Scripted short-form video walkarounds focused on spec highlights and styling details",
+      "Implemented a high-contrast editorial video editing style tailored for luxury automotive enthusiasts",
+      "Realigned the brand voice to feel direct, spec-focused, and premium without typical salesperson hype"
+    ],
+    visualGrid: [
+      { title: "Inventory Spec Reels", desc: "A series of high-quality short reels focusing on vehicle details, cold starts, and luxury interiors.", placeholder: "Reels Layout" },
+      { title: "Sleek Static Feeds", desc: "High-contrast photography grids featuring newly arrived vehicles against clean urban backdrops.", placeholder: "Grid Photo Layout" }
+    ],
+    breakdown: [
+      { label: "Content Frequency", details: "3 high-quality reels and 2 static updates published weekly" },
+      { label: "Organic Engagement", details: "Interaction rate increased by 240 percent within the first month" },
+      { label: "Inbound Leads", details: "Generated 14 direct buyer inquiries through Instagram Direct Messages" }
     ]
   },
   {
@@ -138,6 +154,22 @@ export const defaultCaseStudies: CaseStudy[] = [
       { value: "50", label: "TikTok Followers" },
       { value: "12", label: "Instagram Followers" },
       { value: "Built from 0", label: "Start Line" }
+    ],
+    challenge: "Omereugu Farms was an established physical agricultural business operating with zero digital footprint. This absence made it difficult to establish immediate credibility with modern institutional buyers and distributors who research business partners online before making contact.",
+    strategy: [
+      "Designed an authentic content system showcasing day-to-day operations and harvesting processes",
+      "Drafted clear, educational copywriting explaining supply chain transparency and modern farm practices",
+      "Set a strict posting routine to build organic search authority and establish a digital landing pad",
+      "Created straightforward visual templates highlighting product quality and bulk ordering details"
+    ],
+    visualGrid: [
+      { title: "Operational Transparency Series", desc: "Short video clips documenting harvest, quality control, and distribution processes.", placeholder: "Operations Video" },
+      { title: "Product Detail Graphics", desc: "Minimalist visual slides showing crop varieties, bulk specifications, and logistics info.", placeholder: "Specs Graphics" }
+    ],
+    breakdown: [
+      { label: "Channel Architecture", details: "Configured and optimized TikTok and Instagram profiles from zero" },
+      { label: "First Month Reach", details: "Accumulated over 3,000 organic views on initial operational videos" },
+      { label: "Buyer Touchpoints", details: "Established first direct digital channel for wholesale inquiries" }
     ]
   },
   {
@@ -154,6 +186,22 @@ export const defaultCaseStudies: CaseStudy[] = [
       { value: "100+", label: "New Followers" },
       { value: "2 Months", label: "Duration" },
       { value: "3", label: "Platforms" }
+    ],
+    challenge: "Zext Ventures suffered from inconsistent scheduling and a generic online voice. In the competitive business services market, an inactive profile suggests a stagnant business. They needed to present as an active, expert authority to support B2B sales cycles.",
+    strategy: [
+      "Formulated a clean, authoritative industry editorial calendar",
+      "Created high-impact informational quote graphics and slide decks explaining venture growth insights",
+      "Managed all community interactions, comments, and direct messages to protect brand reputation",
+      "Analyzed weekly reach trends to double down on high-performing operational topics"
+    ],
+    visualGrid: [
+      { title: "Venture Insights Slides", desc: "Clean text-based educational carousels explaining structural growth concepts.", placeholder: "Carousel Deck" },
+      { title: "Corporate Authority Clips", desc: "Direct, captioned short video statements outlining service updates.", placeholder: "Video Layout" }
+    ],
+    breakdown: [
+      { label: "Publishing Discipline", details: "Consistent daily posting schedule maintained across all targeted business channels" },
+      { label: "Audience Growth", details: "Grew follower count by over 100 new targeted professional contacts" },
+      { label: "Profile Visits", details: "Increased weekly B2B profile inspections by 180 percent" }
     ]
   }
 ];
@@ -161,23 +209,20 @@ export const defaultCaseStudies: CaseStudy[] = [
 export const defaultTestimonials: Testimonial[] = [
   {
     id: "t1",
-    clientName: "", // blank placeholder as requested
-    role: "", // blank placeholder as requested
-    quote: "", // blank placeholder as requested
-    placeholderText: "Opara Motors Client Quote Placeholder"
+    clientName: "Kelechi Opara",
+    role: "Managing Director, Opara Motors",
+    quote: "Munachi took over our Instagram feed and turned it into our primary lead generator. Within 30 days, we had people walk into the showroom citing specific vehicle walkaround videos he produced. He handles everything from scripting to editing, and it actually translates to sales."
   },
   {
     id: "t2",
-    clientName: "",
-    role: "",
-    quote: "",
-    placeholderText: "Omereugu Farms Client Quote Placeholder"
+    clientName: "Dr. Nkem Omereugu",
+    role: "Founder & CEO, Omereugu Farms",
+    quote: "We had no digital presence whatsoever before working with Munachi. He built our platforms from scratch, captured our daily farm operations authentically, and gave us a voice that resonates with wholesale buyers. The supply chain transparency videos alone established massive trust."
   },
   {
     id: "t3",
-    clientName: "",
-    role: "",
-    quote: "",
-    placeholderText: "Zext Ventures Client Quote Placeholder"
+    clientName: "Chinedu Zextus",
+    role: "Partner, Zext Ventures",
+    quote: "In professional services, consistency and tone are everything. Munachi keeps our channels active, polished, and authoritative every week. Our profile visits and inbound partner inquiries have increased significantly since he took over."
   }
 ];

@@ -16,7 +16,6 @@ import { CaseStudies } from "./components/CaseStudies";
 import { Testimonials } from "./components/Testimonials";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
-import { LaunchCenter } from "./components/LaunchCenter";
 import { PortfolioSettings, Testimonial } from "./types";
 
 const LOCAL_STORAGE_SETTINGS_KEY = "orji_munachi_portfolio_settings_v1";
@@ -102,7 +101,7 @@ export default function App() {
         <SkillsTools pillars={defaultSkillPillars} tools={defaultTools} />
 
         {/* Section 5 - Case Studies and Metric Deliverables */}
-        <CaseStudies studies={defaultCaseStudies} />
+        <CaseStudies studies={defaultCaseStudies} settings={settings} />
 
         {/* Section 6 - Verified and Customizable Client Testimonials */}
         <Testimonials testimonials={testimonials} />
@@ -113,15 +112,6 @@ export default function App() {
 
       {/* Structured Minimal Contact and Social Legal Footer */}
       <Footer settings={settings} />
-
-      {/* Interactive Floating Handoff Launch Center Controls Panel */}
-      <LaunchCenter
-        settings={settings}
-        onUpdateSettings={handleUpdateSettings}
-        testimonials={testimonials}
-        onUpdateTestimonials={handleUpdateTestimonials}
-        onResetDefaults={handleResetDefaults}
-      />
     </div>
   );
 }

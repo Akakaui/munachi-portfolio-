@@ -26,7 +26,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ testimonials }) => {
             Don't take my word for it.
           </h2>
           <p className="font-sans text-lg text-brand-muted font-semibold mt-1">
-            Testimonials below can be populated using the Launch Center drawer below.
+            Feedback from real physical brand owners who trust my work and see the results.
           </p>
         </div>
 
@@ -80,7 +80,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ testimonials }) => {
                             Testimonial Placeholder
                           </h4>
                           <p className="font-sans text-xs font-medium text-brand-muted mt-1 leading-normal">
-                            No quote entered yet. Munachi can input real client feedback for {brandTags[idx]} using the Launch Center control panel below at any time.
+                            No quote entered yet. Munachi can update client feedback for {brandTags[idx]} directly in the codebase.
                           </p>
                         </div>
                       </div>

@@ -31,6 +31,10 @@ export interface CaseStudy {
   body: string;
   metrics: Stat[];
   imagePlaceholderText: string;
+  challenge: string;
+  strategy: string[];
+  visualGrid: { title: string; desc: string; placeholder: string }[];
+  breakdown: { label: string; details: string }[];
 }
 
 export interface Testimonial {

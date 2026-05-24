@@ -1,5 +1,5 @@
 import React from "react";
-import { Mail, ArrowRight } from "lucide-react";
+import { Instagram } from "lucide-react";
 import { PortfolioSettings } from "../types";
 
 interface ContactProps {
@@ -7,8 +7,6 @@ interface ContactProps {
 }
 
 export const Contact: React.FC<ContactProps> = ({ settings }) => {
-  const mailLink = `mailto:${settings.profileEmail}?subject=Project Consultation and Booking`;
-
   return (
     <section
       id="contact"
@@ -37,16 +35,18 @@ export const Contact: React.FC<ContactProps> = ({ settings }) => {
         {/* Redirection Direct CTA */}
         <div className="flex flex-col items-center gap-4 mt-4 w-full">
           <a
-            href={mailLink}
+            href={settings.instagramUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full sm:w-auto px-12 py-5 bg-brand-accent text-white font-mono text-lg uppercase font-bold border-4 border-white brutalist-shadow-lg hover:shadow-[16px_16px_0px_0px_rgba(255,255,255,1)] hover:translate-x-[-4px] hover:translate-y-[-4px] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] transition-all duration-200 flex items-center justify-center gap-3"
           >
-            Hire Me <Mail className="w-5 h-5" />
+            Hire Me <Instagram className="w-5 h-5" />
           </a>
 
           {/* Subtitle direct email string label link */}
           <a
-            href={mailLink}
-            className="font-mono text-sm font-semibold tracking-wider text-white/60 hover:text-brand-accent transition-colors underline decoration-brand-accent decoration-2 underline-offset-4 mt-2"
+            href={`mailto:${settings.profileEmail}?subject=Project Inquiry`}
+            className="font-mono text-sm font-semibold tracking-wider text-white/60 hover:text-brand-accent transition-colors underline decoration-brand-accent decoration-2 underline-offset-4 mt-2 select-all"
           >
             or email me directly at {settings.profileEmail}
           </a>

@@ -17,6 +17,10 @@
 }
 
 /* Custom Editorial Brutalist Utilities */
+@utility brutalist-shadow-sm {
+  box-shadow: 3px 3px 0px 0px var(--color-brand-border, #000000);
+}
+
 @utility brutalist-shadow {
   box-shadow: 6px 6px 0px 0px var(--color-brand-border, #000000);
 }
@@ -49,6 +53,12 @@ html {
   scroll-behavior: smooth;
   background-color: var(--color-brand-bg);
   color: var(--color-brand-black);
+}
+
+body {
+  overflow-x: hidden; /* Prevent horizontal scroll from brutalist shadows */
+  -webkit-tap-highlight-color: transparent; /* Remove tap flash on mobile */
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Simulated fine paper film-grain texture */
