@@ -82,12 +82,6 @@ export const Hero: React.FC<HeroProps> = ({ settings }) => {
           transition={{ duration: 0.7 }}
           className="flex flex-col gap-6"
         >
-          {/* Label Pillar */}
-          <div className="inline-flex items-center gap-2 border-2 border-brand-black bg-white px-4 py-1.5 w-fit font-mono text-xs uppercase font-bold brutalist-shadow-sm">
-            <Sparkles className="w-4 h-4 text-brand-accent fill-brand-accent" />
-            Social Media Manager Portfolio
-          </div>
-
           {/* Name Display */}
           <h2 className="font-mono text-lg font-bold tracking-widest text-brand-accent uppercase mt-2">
             {settings.profileName}

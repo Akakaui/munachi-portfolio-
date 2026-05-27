@@ -390,34 +390,10 @@ export const CaseStudies: React.FC<CaseStudiesProps> = ({ studies, settings }) =
 
                 <div className="border-t-2 border-brand-black/10" />
 
-                {/* Visual grid */}
-                <div className="space-y-4">
-                  <h4 className="font-mono text-[10px] uppercase font-extrabold text-brand-accent tracking-widest">
-                    04 — Visual Layout Assets
-                  </h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {selectedStudy.visualGrid.map((visual, idx) => (
-                      <div key={idx} className="border-2 border-brand-black bg-white p-4 brutalist-shadow-sm hover:translate-y-[-2px] transition-transform duration-200">
-                        <div className="w-full aspect-[4/3] bg-brand-light-gray border border-brand-black/20 flex items-center justify-center font-mono text-xs font-bold text-brand-muted uppercase mb-3 select-none">
-                          {visual.placeholder}
-                        </div>
-                        <h5 className="font-display text-xs uppercase text-brand-black font-bold mb-1">
-                          {visual.title}
-                        </h5>
-                        <p className="font-sans text-xs text-brand-muted font-medium leading-relaxed">
-                          {visual.desc}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="border-t-2 border-brand-black/10" />
-
                 {/* Proof of work */}
                 <div className="space-y-4">
                   <h4 className="font-mono text-[10px] uppercase font-extrabold text-brand-accent tracking-widest">
-                    05 — Proof of Work
+                    04 — Proof of Work
                   </h4>
                   <div className="bg-white border-2 border-brand-black divide-y-2 divide-brand-black/10">
                     {selectedStudy.breakdown.map((item, idx) => (

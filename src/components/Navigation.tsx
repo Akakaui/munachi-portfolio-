@@ -56,7 +56,7 @@ export const Navigation: React.FC<NavigationProps> = ({ settings }) => {
             <a
               href="#hero"
               onClick={(e) => handleScroll(e, "#hero")}
-              className="font-display text-2xl sm:text-3xl tracking-tighter hover:text-brand-accent transition-colors duration-200"
+              className="font-display text-2xl sm:text-3xl tracking-tighter hover:text-brand-accent transition-colors duration-200 outline-none focus:outline-none"
             >
               {settings.profileName}
             </a>

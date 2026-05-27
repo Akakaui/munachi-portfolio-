@@ -28,32 +28,32 @@ export const SkillsTools: React.FC<SkillsToolsProps> = ({ pillars, tools }) => {
     const sizeClass = "w-8 h-8 transition-transform duration-300 group-hover:scale-110";
     switch (key) {
       case "canva":
-        return <CanvaLogo className={sizeClass} color={isHovered ? "#00C4CC" : "currentColor"} />;
+        return <CanvaLogo className={sizeClass} />;
       case "capcut":
-        return <CapCutLogo className={sizeClass} color={isHovered ? "#221F20" : "currentColor"} />;
+        return <CapCutLogo className={sizeClass} />;
       case "meta":
       case "metabusiness":
-        return <MetaLogo className={sizeClass} color={isHovered ? "#0668E1" : "currentColor"} />;
+        return <MetaLogo className={sizeClass} />;
       case "instagram":
-        return <InstagramLogo className={sizeClass} color={isHovered ? "#E1306C" : "currentColor"} />;
+        return <InstagramLogo className={sizeClass} />;
       case "facebook":
-        return <FacebookLogo className={sizeClass} color={isHovered ? "#1877F2" : "currentColor"} />;
+        return <FacebookLogo className={sizeClass} />;
       case "tiktok":
-        return <TikTokLogo className={sizeClass} color={isHovered ? "#000000" : "currentColor"} />;
+        return <TikTokLogo className={sizeClass} />;
       case "linkedin":
-        return <LinkedInLogo className={sizeClass} color={isHovered ? "#0077B5" : "currentColor"} />;
+        return <LinkedInLogo className={sizeClass} />;
       case "x":
-        return <XLogo className={sizeClass} color={isHovered ? "#1DA1F2" : "currentColor"} />;
+        return <XLogo className={sizeClass} />;
       case "youtube":
-        return <YouTubeLogo className={sizeClass} color={isHovered ? "#FF0000" : "currentColor"} />;
+        return <YouTubeLogo className={sizeClass} />;
       case "googleads":
         return <GoogleAdsLogo className={sizeClass} />;
       case "googleanalytics":
         return <GoogleAnalyticsLogo className={sizeClass} />;
       case "buffer":
-        return <BufferLogo className={sizeClass} color={isHovered ? "#2C4BFF" : "currentColor"} />;
+        return <BufferLogo className={sizeClass} />;
       case "hootsuite":
-        return <HootsuiteLogo className={sizeClass} color={isHovered ? "#353D42" : "currentColor"} />;
+        return <HootsuiteLogo className={sizeClass} />;
       default:
         return <div className="font-mono text-xs font-bold">{key}</div>;
     }

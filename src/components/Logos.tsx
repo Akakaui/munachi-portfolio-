@@ -5,189 +5,146 @@ interface LogoProps {
   color?: string;
 }
 
-// Canva monochrome/minimal SVG
-export const CanvaLogo: React.FC<LogoProps> = ({ className = "w-8 h-8", color = "currentColor" }) => (
-  <svg viewBox="0 0 100 100" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
+// Canva logo - using official Simple Icons path and brand color
+export const CanvaLogo: React.FC<LogoProps> = ({ className = "w-8 h-8", color }) => (
+  <svg role="img" viewBox="0 0 24 24" className={className} fill={color || "#00C4CC"} xmlns="http://www.w3.org/2000/svg">
+    <title>Canva</title>
+    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zM6.962 7.68c.754 0 1.337.549 1.405 1.2.069.583-.171 1.097-.822 1.406-.343.171-.48.172-.549.069-.034-.069 0-.137.069-.206.617-.514.617-.926.548-1.508-.034-.378-.308-.618-.583-.618-1.2 0-2.914 2.674-2.674 4.629.103.754.549 1.646 1.509 1.646.308 0 .65-.103.96-.24.5-.264.799-.47 1.097-.8-.073-.885.704-2.046 1.851-2.046.515 0 .926.205.96.583.068.514-.377.582-.514.582s-.378-.034-.378-.17c-.034-.138.309-.07.275-.378-.035-.206-.24-.274-.446-.274-.72 0-1.131.994-1.029 1.611.035.275.172.549.447.549.205 0 .514-.31.617-.755.068-.308.343-.514.583-.514.102 0 .17.034.205.171v.138c-.034.137-.137.548-.102.651 0 .069.034.171.17.171.092 0 .436-.18.777-.459.117-.59.253-1.298.253-1.357.034-.24.137-.48.617-.48.103 0 .171.034.205.171v.138l-.136.617c.445-.583 1.097-.994 1.508-.994.172 0 .309.102.309.274 0 .103 0 .274-.069.446-.137.377-.309.96-.412 1.474 0 .137.035.274.207.274.171 0 .685-.206 1.096-.754l.007-.004c-.002-.068-.007-.134-.007-.202 0-.411.035-.754.104-.994.068-.274.411-.514.617-.514.103 0 .205.069.205.171 0 .035 0 .103-.034.137-.137.446-.24.857-.24 1.269 0 .24.034.582.102.788 0 .034.035.069.07.069.068 0 .548-.445.89-1.028-.308-.206-.48-.549-.48-.96 0-.72.446-1.097.858-1.097.343 0 .617.24.617.72 0 .308-.103.65-.274.96h.102a.77.77 0 0 0 .584-.24.293.293 0 0 1 .134-.117c.335-.425.83-.74 1.41-.74.48 0 .924.205.959.582.068.515-.378.618-.515.618l-.002-.002c-.138 0-.377-.035-.377-.172 0-.137.309-.068.274-.376-.034-.206-.24-.275-.446-.275-.686 0-1.13.891-1.028 1.611.034.275.171.583.445.583.206 0 .515-.308.652-.754.068-.274.343-.514.583-.514.103 0 .17.034.205.171 0 .069 0 .206-.137.652-.17.308-.171.48-.137.617.034.274.171.48.309.583.034.034.068.102.068.102 0 .069-.034.138-.137.138-.034 0-.068 0-.103-.035-.514-.205-.72-.548-.789-.891-.205.24-.445.377-.72.377-.445 0-.89-.411-.96-.926a1.609 1.609 0 0 1 .075-.649c-.203.13-.422.203-.623.203h-.17c-.447.652-.927 1.098-1.27 1.303a.896.896 0 0 1-.377.104c-.068 0-.171-.035-.205-.104-.095-.152-.156-.392-.193-.667-.481.527-1.145.805-1.453.805-.343 0-.548-.206-.582-.55v-.376c.102-.754.377-1.2.377-1.337a.074.074 0 0 0-.069-.07c-.24 0-1.028.824-1.166 1.373l-.103.445c-.068.309-.377.515-.582.515-.103 0-.172-.035-.206-.172v-.137l.046-.233c-.435.31-.87.508-1.075.508-.308 0-.48-.172-.514-.412-.206.274-.445.412-.754.412-.352 0-.696-.24-.862-.593-.244.275-.523.553-.852.764-.48.309-1.028.549-1.68.549-.582 0-1.097-.309-1.371-.583-.412-.377-.651-.96-.686-1.509-.205-1.68.823-3.84 2.4-4.8.378-.205.755-.343 1.132-.343zm9.77 3.291c-.104 0-.172.172-.172.343 0 .274.137.583.309.755a1.74 1.74 0 0 0 .102-.583c0-.343-.137-.515-.24-.515z" />
+  </svg>
+);
+
+// CapCut logo - using custom high-quality SVG from the downloaded pack
+export const CapCutLogo: React.FC<LogoProps> = ({ className = "w-8 h-8", color }) => (
+  <svg viewBox="0 0 512 509.659" className={className} xmlns="http://www.w3.org/2000/svg">
+    <title>CapCut</title>
+    {/* Dark rounded square background */}
+    <path fill={color || "#000000"} d="M116.971 2.475h278.058c62.971 0 114.494 51.522 114.494 114.494v275.722c0 62.971-51.523 114.493-114.494 114.493H116.971c-62.972 0-114.494-51.522-114.494-114.493V116.969c0-62.972 51.522-114.494 114.494-114.494z"/>
+    {/* Main white graphic components */}
+    <path fill="#ffffff" d="M109.095 181.505c-.123 8.897 0 17.813 0 26.71a5.41 5.41 0 003.225 4.917 23898.407 23898.407 0 0084.108 41.646c-27.832 13.672-55.563 27.526-83.353 41.259a5.938 5.938 0 00-4.081 4.876v26.771c1.854 18.195 15.823 32.817 33.913 35.503 3.509.326 7.02.266 10.529.266l155.85.001a45.08 45.08 0 0011.224-.92 40.825 40.825 0 0026.137-20.015 63.699 63.699 0 004.288-11.226c15.997 8.325 32.341 16.079 48.462 24.179.385.291.857.447 1.343.447a2.266 2.266 0 002.265-2.265v-.016-27.669a4.695 4.695 0 00-3.143-4.079l-135.323-67.112c45.203-22.431 90.412-44.876 135.63-67.335a4.573 4.573 0 002.754-4.082v-27.628a2.183 2.183 0 00-3.142-1.673l-49.135 24.363a42.189 42.189 0 00-6.388-14.917 40.613 40.613 0 00-30.097-17.422l-167.133-.001c-19.615.91-35.688 15.918-37.933 35.424v-.002z"/>
+    <path fill="#ffffff" d="M140.049 181.689a10.082 10.082 0 019.345-5.55h161.545l.106-.001c5.066 0 9.368 3.72 10.096 8.734.205 2.714.102 5.428 0 8.162l-90.597 44.891c-30.608-15.018-61.03-30.22-91.535-45.339.142-3.632-.633-7.53 1.04-10.897zM139.009 317.095a24846.007 24846.007 0 0191.351-45.319c30.322 14.773 60.521 29.954 90.802 44.89-.204 3.918.755 8.162-1.305 11.773a10.085 10.085 0 01-8.755 5.08h-.082l-161.605.002-.277.002a10.202 10.202 0 01-9.007-5.411c-1.796-3.386-.98-7.345-1.122-11.017z"/>
+    <path fill={color || "#00c4cc"} fillRule="nonzero" d="M109.095 181.505c2.223-19.532 18.316-34.578 37.955-35.483l167.194-.001a40.612 40.612 0 0130.095 17.427 42.152 42.152 0 016.39 14.915l49.135-24.364a2.185 2.185 0 013.141 1.674v27.628l.001.096a4.571 4.571 0 01-2.837 4.229 177620.936 177620.936 0 00-135.63 67.336l135.324 66.948a4.695 4.695 0 013.142 4.08v27.685a2.266 2.266 0 01-3.613 1.821c-16.12-8.162-32.464-15.854-48.462-24.18a63.503 63.503 0 01-4.282 11.225 40.813 40.813 0 01-26.098 20.135 44.994 44.994 0 01-11.221.919l-155.833.003c-3.51 0-7.04 0-10.53-.266-18.089-2.705-32.049-17.363-33.869-35.565v-26.77a5.935 5.935 0 014.08-4.879c27.791-13.732 55.521-27.587 83.353-41.258a32412.61 32412.61 0 00-84.17-41.748 5.41 5.41 0 01-3.223-4.918c-.042-8.876-.185-17.792-.042-26.689zm30.975.184c-1.674 3.367-.898 7.263-1.041 10.896 30.608 15.12 60.99 30.321 91.536 45.339 30.185-14.963 60.384-29.927 90.596-44.89 0-2.714.123-5.428 0-8.162a10.203 10.203 0 00-10.096-8.734h-.106l-161.565.001a10.082 10.082 0 00-9.345 5.55h.021zm-1.041 135.406c.142 3.673-.654 7.631 1.122 11.039a10.204 10.204 0 009.284 5.405l161.667.002.081-.001c3.618 0 6.961-1.94 8.754-5.081 2.04-3.57 1.102-7.855 1.305-11.773-30.26-14.936-60.48-30.118-90.801-44.89a43915.126 43915.126 0 00-91.432 45.299h.02z" />
+  </svg>
+);
+
+// Meta logo - infinity loop from downloaded pack and official brand color
+export const MetaLogo: React.FC<LogoProps> = ({ className = "w-8 h-8", color }) => (
+  <svg role="img" viewBox="0 0 24 24" className={className} fill={color || "#0668E1"} xmlns="http://www.w3.org/2000/svg">
+    <title>Meta</title>
+    <path d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z" />
+  </svg>
+);
+
+// TikTok logo - music note from downloaded pack
+export const TikTokLogo: React.FC<LogoProps> = ({ className = "w-8 h-8", color }) => (
+  <svg role="img" viewBox="0 0 24 24" className={className} fill={color || "#000000"} xmlns="http://www.w3.org/2000/svg">
+    <title>TikTok</title>
+    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
+  </svg>
+);
+
+// Google Ads logo - using the official diagonal multi-colored vector paths from downloaded pack
+export const GoogleAdsLogo: React.FC<LogoProps> = ({ className = "w-8 h-8", color }) => (
+  <svg role="img" viewBox="0 0 24 24" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
+    <title>Google Ads</title>
+    {/* Green Dot */}
     <path
-      d="M15 50C15 30.67 30.67 15 50 15C69.33 15 85 30.67 85 50C85 69.33 69.33 85 50 85C30.67 85 15 69.33 15 50ZM50 20C33.43 20 20 33.43 20 50C20 66.57 33.43 80 50 80C66.57 80 80 66.57 80 50C80 33.43 66.57 20 50 20Z"
-      fill={color}
+      d="M3.9998 22.9291C1.7908 22.9291 0 21.1383 0 18.9293s1.7908-3.9998 3.9998-3.9998 3.9998 1.7908 3.9998 3.9998-1.7908 3.9998-3.9998 3.9998z"
+      fill={color || "#34A853"}
     />
+    {/* Long Blue Bar */}
     <path
-      d="M32C36.5 45.5 42 58 52 58C62 58 64.5 45.5 61.5 39C57.5 30.5 44 26 36.5 32.5C29 39 30 52 35.5 60.5C41 69 51 72.5 59.5 70C68 67.5 70.5 59 70.5 59"
-      stroke={color}
-      strokeWidth="4"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      d="M23.4643 16.9287L15.4632 3.072C14.3586 1.1587 11.9121.5028 9.9988 1.6074S7.4295 5.1585 8.5341 7.0718l8.0009 13.8567c1.1046 1.9133 3.5511 2.5679 5.4644 1.4646 1.9134-1.1046 2.568-3.5511 1.4647-5.4644z"
+      fill={color || "#4285F4"}
     />
-  </svg>
-);
-
-// CapCut minimalist SVG vector
-export const CapCutLogo: React.FC<LogoProps> = ({ className = "w-8 h-8", color = "currentColor" }) => (
-  <svg viewBox="0 0 100 100" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
+    {/* Short Yellow Bar */}
     <path
-      d="M20 30L45 50L20 70V30ZM80 30L55 50L80 70V30Z"
-      fill={color}
-      stroke={color}
-      strokeWidth="4"
-      strokeLinejoin="round"
+      d="M7.5137 4.8438L1.5645 15.1484A4.5 4.5 0 0 1 4 14.4297c2.5597-.0075 4.6248 2.1585 4.4941 4.7148l3.2168-5.5723-3.6094-6.25c-.4499-.7793-.6322-1.6394-.5878-2.4784z"
+      fill={color || "#F4B400"}
     />
-    <path d="M45 50H55" stroke={color} strokeWidth="6" strokeLinecap="round" />
   </svg>
 );
 
-// Meta (infinity logo) SVG
-export const MetaLogo: React.FC<LogoProps> = ({ className = "w-8 h-8", color = "currentColor" }) => (
-  <svg viewBox="0 0 100 100" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
+// Meta Business Suite logo - uses the Meta logo
+export const MetaBusinessSuiteLogo: React.FC<LogoProps> = ({ className = "w-8 h-8", color }) => (
+  <MetaLogo className={className} color={color} />
+);
+
+// Google Analytics logo - using GA4 orange bar styling from downloaded pack
+export const GoogleAnalyticsLogo: React.FC<LogoProps> = ({ className = "w-8 h-8", color }) => (
+  <svg role="img" viewBox="0 0 24 24" className={className} fill={color || "#E37400"} xmlns="http://www.w3.org/2000/svg">
+    <title>Google Analytics</title>
+    <path d="M22.84 2.9982v17.9987c.0086 1.6473-1.3197 2.9897-2.967 2.9984a2.9808 2.9808 0 01-.3677-.0208c-1.528-.226-2.6477-1.5558-2.6105-3.1V3.1204c-.0369-1.5458 1.0856-2.8762 2.6157-3.1 1.6361-.1915 3.1178.9796 3.3093 2.6158.014.1201.0208.241.0202.3619zM4.1326 18.0548c-1.6417 0-2.9726 1.331-2.9726 2.9726C1.16 22.6691 2.4909 24 4.1326 24s2.9726-1.3309 2.9726-2.9726-1.331-2.9726-2.9726-2.9726zm7.8728-9.0098c-.0171 0-.0342 0-.0513.0003-1.6495.0904-2.9293 1.474-2.891 3.1256v7.9846c0 2.167.9535 3.4825 2.3505 3.763 1.6118.3266 3.1832-.7152 3.5098-2.327.04-.1974.06-.3983.0593-.5998v-8.9585c.003-1.6474-1.33-2.9852-2.9773-2.9882z" />
+  </svg>
+);
+
+// Buffer logo - stack of sheets from downloaded pack and brand color
+export const BufferLogo: React.FC<LogoProps> = ({ className = "w-8 h-8", color }) => (
+  <svg role="img" viewBox="0 0 24 24" className={className} fill={color || "#2C4BFF"} xmlns="http://www.w3.org/2000/svg">
+    <title>Buffer</title>
+    <path d="M1.371 5.476L11.943 0l10.686 5.476-10.686 5.495zm3.36 4.81l7.212 3.547 7.288-3.547 3.398 1.655-10.686 5.202L1.371 11.94zm0 6.171l7.212 3.911 7.288-3.91 3.398 1.815L11.943 24 1.371 18.273z" />
+  </svg>
+);
+
+// Hootsuite logo - modern owl graphic from downloaded pack and brand color
+export const HootsuiteLogo: React.FC<LogoProps> = ({ className = "w-8 h-8", color }) => (
+  <svg role="img" viewBox="0 0 24 24" className={className} fill={color || "#143059"} xmlns="http://www.w3.org/2000/svg">
+    <title>Hootsuite</title>
+    <path d="M11.417 11.14c.505.75.28 1.572-.38 2.017-.66.444-1.505.343-2.01-.407-.506-.75-.282-1.572.378-2.017.66-.444 1.506-.343 2.012.407zm5.017-.274c-.66.444-.884 1.266-.379 2.016.506.75 1.352.852 2.012.407.66-.444.884-1.266.379-2.016-.506-.75-1.352-.852-2.012-.407zm7.422-7.086L19.03 6.638l.236.272c2.224 2.613 3.591 6.409 4.247 8.606a4.362 4.362 0 0 1-.638 3.8C21.449 21.295 18.398 24 12.369 24c-6.58 0-10-3.25-11.644-5.251a3.117 3.117 0 0 1-.51-3.067c.909-2.444 2.766-7.126 4.257-8.825a13.158 13.158 0 0 1 2.897-2.478L2.4.534c-.27-.208-.034-.632.285-.513l8.077 3.006c.38-.066.758-.1 1.13-.1 1.407 0 2.737.307 4.074 1.084l7.744-.695c.266-.024.378.331.147.464zm-8.218 13.656a4.126 4.126 0 0 1-3.316-.232c-.073-.037-.143.055-.087.115.457.49 1.273 1.35 1.766 1.775.102.088.259.077.35-.023l1.369-1.512c.053-.059-.008-.15-.082-.123zm.24-1.156-1.796-2.018a.34.34 0 0 0-.513.008l-1.44 1.716a.18.18 0 0 0 .031.262c.333.239 1.148.76 1.942.76.734 0 1.402-.285 1.724-.447a.18.18 0 0 0 .052-.281zm1.616-8.409c-.3-.034-.603.035-.862.188l-1.808 1.07c-.45.268-1.02.231-1.432-.091L11.819 7.82a4.669 4.669 0 0 0-1.776-.858c-2.698-.638-4.532.78-5.914 3.44-1.32 2.539-.583 6.184 2.672 7.05 3.438.914 5.71-2.903 6.618-4.175a.439.439 0 0 1 .712-.002c1.408 1.916 3.306 3.968 5.34 3.557 2.656-.535 2.342-3.905 1.512-5.7-.735-1.588-1.83-3.074-3.49-3.262z" />
+  </svg>
+);
+
+// Instagram logo - camera icon from downloaded pack with premium radial brand gradient
+export const InstagramLogo: React.FC<LogoProps> = ({ className = "w-8 h-8", color }) => (
+  <svg role="img" viewBox="0 0 24 24" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
+    <title>Instagram</title>
+    <defs>
+      <radialGradient id="instagram-grad" cx="30%" cy="107%" r="130%">
+        <stop offset="0%" stopColor="#fdf497" />
+        <stop offset="5%" stopColor="#fdf497" />
+        <stop offset="45%" stopColor="#fd5949" />
+        <stop offset="60%" stopColor="#d6249f" />
+        <stop offset="90%" stopColor="#285AEB" />
+      </radialGradient>
+    </defs>
     <path
-      d="M32.8 35.6C40.6 35.6 47.9 44.8 50 49C52.1 44.8 59.4 35.6 67.2 35.6C75.3 35.6 82.5 42.1 82.5 50C82.5 57.9 75.3 64.4 67.2 64.4C59.4 64.4 52.1 55.2 50 51C47.9 55.2 40.6 64.4 32.8 64.4C24.7 64.4 17.5 57.9 17.5 50C17.5 42.1 24.7 35.6 32.8 35.6Z"
-      stroke={color}
-      strokeWidth="6.5"
-      strokeLinejoin="round"
+      d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"
+      fill={color || "url(#instagram-grad)"}
     />
   </svg>
 );
 
-// TikTok (music note logo) SVG
-export const TikTokLogo: React.FC<LogoProps> = ({ className = "w-8 h-8", color = "currentColor" }) => (
-  <svg viewBox="0 0 100 100" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
+// Facebook logo - circular F graphic from downloaded pack and brand color
+export const FacebookLogo: React.FC<LogoProps> = ({ className = "w-8 h-8", color }) => (
+  <svg role="img" viewBox="0 0 24 24" className={className} fill={color || "#1877F2"} xmlns="http://www.w3.org/2000/svg">
+    <title>Facebook</title>
+    <path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z" />
+  </svg>
+);
+
+// LinkedIn logo - official graphic from downloaded pack and brand color
+export const LinkedInLogo: React.FC<LogoProps> = ({ className = "w-8 h-8", color }) => (
+  <svg role="img" viewBox="0 0 24 24" className={className} fill={color || "#0A66C2"} xmlns="http://www.w3.org/2000/svg">
+    <title>LinkedIn</title>
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+  </svg>
+);
+
+// X logo - modern styling from downloaded pack and brand color
+export const XLogo: React.FC<LogoProps> = ({ className = "w-8 h-8", color }) => (
+  <svg role="img" viewBox="0 0 24 24" className={className} fill={color || "#000000"} xmlns="http://www.w3.org/2000/svg">
+    <title>X</title>
+    <path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z" />
+  </svg>
+);
+
+// YouTube logo - play icon from downloaded pack with red background and white play button
+export const YouTubeLogo: React.FC<LogoProps> = ({ className = "w-8 h-8", color }) => (
+  <svg role="img" viewBox="0 0 24 24" className={className} xmlns="http://www.w3.org/2000/svg">
+    <title>YouTube</title>
     <path
-      d="M55 20V65C55 73.28 48.28 80 40 80C31.72 80 25 73.28 25 65C25 56.72 31.72 50 40 50C42.5 50 44.83 50.62 46.88 51.7V35.62C40.9 34.69 35 39.42 35 45.62C23.16 41.51 22.8 62.48 31 71C40.67 80.99 64.41 78.43 65 62V40C72 40 78 45 78 51V39C78 39 72 37 65 31V20H55Z"
-      fill={color}
+      d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"
+      fill={color || "#FF0000"}
     />
-  </svg>
-);
-
-// Google Ads stylized logo SVG
-export const GoogleAdsLogo: React.FC<LogoProps> = ({ className = "w-8 h-8", color = "currentColor" }) => (
-  <svg viewBox="0 0 100 100" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M62 25L32 77L20 56L50 4L62 25Z"
-      fill={color === "currentColor" ? "#4285F4" : color}
-    />
-    <path
-      d="M62 25L92 77H68L62 25Z"
-      fill={color === "currentColor" ? "#F4B400" : color}
-    />
-    <path
-      d="M68 77H32L68 77Z"
-      fill={color === "currentColor" ? "#0F9D58" : color}
-    />
-    <path
-      d="M32 77L68 77L50 46L32 77Z"
-      fill={color === "currentColor" ? "#0F9D58" : color}
-    />
-  </svg>
-);
-
-// Meta Business Suite logo icon
-export const MetaBusinessSuiteLogo: React.FC<LogoProps> = ({ className = "w-8 h-8", color = "currentColor" }) => (
-  <svg viewBox="0 0 100 100" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="15" y="15" width="70" height="70" rx="14" stroke={color} strokeWidth="5" />
-    <path
-      d="M36 43C40 43 44 49 45 51C46 49 50 43 54 43C58.5 43 62 46.5 62 51C62 55.5 58.5 59 54 59C50 59 46 53 45 51C44 53 40 59 36 59C31.5 59 28 55.5 28 51C28 46.5 31.5 43 36 43Z"
-      stroke={color}
-      strokeWidth="4"
-    />
-    <circle cx="50" cy="50" r="2" fill={color} />
-  </svg>
-);
-
-// Google Analytics standard bar logo
-export const GoogleAnalyticsLogo: React.FC<LogoProps> = ({ className = "w-8 h-8", color = "currentColor" }) => (
-  <svg viewBox="0 0 100 100" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
-    {/* Bar 1 */}
-    <rect
-      x="22"
-      y="55"
-      width="14"
-      height="25"
-      rx="4"
-      fill={color === "currentColor" ? "#F4B400" : color}
-    />
-    {/* Bar 2 */}
-    <rect
-      x="43"
-      y="35"
-      width="14"
-      height="45"
-      rx="4"
-      fill={color === "currentColor" ? "#DB4437" : color}
-    />
-    {/* Bar 3 */}
-    <rect
-      x="64"
-      y="15"
-      width="14"
-      height="65"
-      rx="4"
-      fill={color === "currentColor" ? "#4285F4" : color}
-    />
-  </svg>
-);
-
-// Buffer sheets stack logo
-export const BufferLogo: React.FC<LogoProps> = ({ className = "w-8 h-8", color = "currentColor" }) => (
-  <svg viewBox="0 0 100 100" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M20 25L50 15L80 25L50 35L20 25Z" fill={color} />
-    <path d="M20 42L50 32L80 42M20 42L50 52L80 42" stroke={color} strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M20 62L50 52L80 62M20 62L50 72L80 62" stroke={color} strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
-// Hootsuite modern owl outline logo
-export const HootsuiteLogo: React.FC<LogoProps> = ({ className = "w-8 h-8", color = "currentColor" }) => (
-  <svg viewBox="0 0 100 100" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="25" y="20" width="50" height="60" rx="12" stroke={color} strokeWidth="5" />
-    {/* Eyes */}
-    <circle cx="40" cy="42" r="6" stroke={color} strokeWidth="3" />
-    <circle cx="40" cy="42" r="2" fill={color} />
-    <circle cx="60" cy="42" r="6" stroke={color} strokeWidth="3" />
-    <circle cx="60" cy="42" r="2" fill={color} />
-    {/* Beak */}
-    <path d="M50 48L46 55H54L50 48Z" fill={color} />
-    {/* Ears */}
-    <path d="M28 20L38 28M72 20L62 28" stroke={color} strokeWidth="4" />
-  </svg>
-);
-
-// Instagram Camera standard outline logo
-export const InstagramLogo: React.FC<LogoProps> = ({ className = "w-8 h-8", color = "currentColor" }) => (
-  <svg viewBox="0 0 24 24" className={className} fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-  </svg>
-);
-
-// Facebook standard minimal logo
-export const FacebookLogo: React.FC<LogoProps> = ({ className = "w-8 h-8", color = "currentColor" }) => (
-  <svg viewBox="0 0 24 24" className={className} fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
-    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-  </svg>
-);
-
-// LinkedIn letter logo
-export const LinkedInLogo: React.FC<LogoProps> = ({ className = "w-8 h-8", color = "currentColor" }) => (
-  <svg viewBox="0 0 24 24" className={className} fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-    <rect x="2" y="9" width="4" height="12" />
-    <circle cx="4" cy="4" r="2" />
-  </svg>
-);
-
-// X logo
-export const XLogo: React.FC<LogoProps> = ({ className = "w-8 h-8", color = "currentColor" }) => (
-  <svg viewBox="0 0 24 24" className={className} fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
-    <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
-    <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
-  </svg>
-);
-
-// YouTube play logo
-export const YouTubeLogo: React.FC<LogoProps> = ({ className = "w-8 h-8", color = "currentColor" }) => (
-  <svg viewBox="0 0 24 24" className={className} fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
-    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
-    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor" />
+    <polygon points="9.545 15.568 15.818 12 9.545 8.432" fill="#ffffff" />
   </svg>
 );

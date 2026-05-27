@@ -8,12 +8,12 @@ export const defaultSettings: PortfolioSettings = {
   profileEmail: "orjimunachi5@gmail.com",
   tagline: "The only social media hire you need.",
   subheadline: "I build strategic social media presences that connect brands—whether physical or digital—with their ideal audience, driving engagement and revenue.",
-  supportingLine: "I work with growth-focused brands: from premium physical products (fashion, automotive, agribusiness) to modern online services and e-commerce platforms.",
+  supportingLine: "I build strategic social media presences that connect brands—whether physical or digital—with their ideal audience, driving engagement and revenue.",
   aboutHeadline: "I don't just manage social media. I build the online presence your business deserves.",
   aboutBodyParagraphs: [
     "My name is Munachi. I'm a social media manager with a full toolkit and a simple promise: you hire one person, you get everything done properly.",
     "I design the visuals. I write the copy. I edit the videos. I build and run the ads. I track the numbers and tell you what they mean. Most of my clients came to me after burning money on disconnected freelancers who couldn't see the full picture. I see the full picture.",
-    "I work best with brands that sell real things: the physical fashion label moving product, the online brand scaling its store, the car dealership building local authority, and the agribusiness ready to grow. I understand how to make products—whether they live on shelves or in the cloud—feel highly desirable online, and I know how to turn that desire into action.",
+    "I work best with businesses that sell real products: the fashion label trying to move inventory, the e-commerce store ready to scale, the car dealership that thinks social media isn't for them, and the agribusiness ready to build a real audience. I understand how to make products—whether you can hold them in your hand or access them on a screen—feel highly desirable online, and I know how to turn that desire into action.",
     "I'm not the cheapest option. I'm the one that works."
   ],
   imageUrl: "", // empty means geometric visual placeholder
