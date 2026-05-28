@@ -1,5 +1,5 @@
 import React from "react";
-import { Instagram } from "lucide-react";
+import { MessageSquare } from "lucide-react";
 import { PortfolioSettings } from "../types";
 
 interface ContactProps {
@@ -40,7 +40,7 @@ export const Contact: React.FC<ContactProps> = ({ settings }) => {
             rel="noopener noreferrer"
             className="w-full sm:w-auto px-12 py-5 bg-brand-accent text-white font-mono text-lg uppercase font-bold border-4 border-white brutalist-shadow-lg hover:shadow-[16px_16px_0px_0px_rgba(255,255,255,1)] hover:translate-x-[-4px] hover:translate-y-[-4px] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] transition-all duration-200 flex items-center justify-center gap-3"
           >
-            Hire Me <Instagram className="w-5 h-5" />
+            Hire Me <MessageSquare className="w-5 h-5" />
           </a>
 
           {/* Subtitle direct email string label link */}

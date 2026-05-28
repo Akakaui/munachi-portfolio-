@@ -1,6 +1,6 @@
 import React from "react";
 import { PortfolioSettings } from "../types";
-import { Instagram, Linkedin, Send } from "lucide-react";
+import { MessageSquare, Linkedin, Send } from "lucide-react";
 
 interface FooterProps {
   settings: PortfolioSettings;
@@ -38,9 +38,9 @@ export const Footer: React.FC<FooterProps> = ({ settings }) => {
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 font-mono text-xs uppercase font-extrabold pb-1 border-b border-white hover:text-brand-accent hover:border-brand-accent transition-colors duration-200"
-            aria-label="Instagram Profile"
+            aria-label="WhatsApp Chat"
           >
-            <Instagram className="w-4 h-4" /> Instagram
+            <MessageSquare className="w-4 h-4" /> WhatsApp
           </a>
           <a
             href={settings.linkedinUrl}

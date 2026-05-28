@@ -18,7 +18,7 @@ export const defaultSettings: PortfolioSettings = {
     "I'm not the cheapest option. I'm the one that works."
   ],
   imageUrl: profileImage, // imported profile portrait
-  instagramUrl: "https://instagram.com/",
+  instagramUrl: "Https://wa.me/qr/FFU5D77AQPWWM1",
   linkedinUrl: "https://linkedin.com/in/"
 };
 

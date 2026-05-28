@@ -28,9 +28,18 @@ export default function App() {
       const stored = localStorage.getItem(LOCAL_STORAGE_SETTINGS_KEY);
       if (stored) {
         const parsed = JSON.parse(stored);
+        let changed = false;
         // Automatically inject the profile image if it was previously empty/unset
         if (!parsed.imageUrl && defaultSettings.imageUrl) {
           parsed.imageUrl = defaultSettings.imageUrl;
+          changed = true;
+        }
+        // Automatically update the old default Instagram link to the new WhatsApp QR link
+        if (parsed.instagramUrl === "https://instagram.com/" || parsed.instagramUrl === "") {
+          parsed.instagramUrl = defaultSettings.instagramUrl;
+          changed = true;
+        }
+        if (changed) {
           localStorage.setItem(LOCAL_STORAGE_SETTINGS_KEY, JSON.stringify(parsed));
         }
         return parsed;
