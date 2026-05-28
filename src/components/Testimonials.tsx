@@ -7,9 +7,16 @@ interface TestimonialsProps {
 }
 
 export const Testimonials: React.FC<TestimonialsProps> = ({ testimonials }) => {
-  // We can maps default initials for each testimonial card based on its index
-  const initialsMap = ["OM", "OF", "ZV"];
-  const brandTags = ["Opara Motors", "Omereugu Farms", "Zext Ventures"];
+  // We can map default initials for each testimonial card based on its index
+  const initialsMap = ["OM", "OF", "VS"];
+  const fallbackTags = ["Opara Motors", "Omereugu Farms", "Vibe & Stitch"];
+
+  const getCompanyName = (test: Testimonial, idx: number) => {
+    if (test.role && test.role.includes(",")) {
+      return test.role.split(",")[1].trim();
+    }
+    return fallbackTags[idx] || "Client Partner";
+  };
 
   return (
     <section
@@ -46,6 +53,8 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ testimonials }) => {
                   .slice(0, 2)
               : initialsMap[idx];
 
+            const companyName = getCompanyName(test, idx);
+
             return (
               <div
                 key={test.id}
@@ -61,7 +70,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ testimonials }) => {
                       Client Review
                     </span>
                     <span className="font-mono text-[10px] uppercase font-black text-brand-accent px-2 py-0.5 bg-brand-light-gray border border-brand-black/30">
-                      {brandTags[idx]}
+                      {companyName}
                     </span>
                   </div>
 
@@ -80,7 +89,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ testimonials }) => {
                             Testimonial Placeholder
                           </h4>
                           <p className="font-sans text-xs font-medium text-brand-muted mt-1 leading-normal">
-                            No quote entered yet. Munachi can update client feedback for {brandTags[idx]} directly in the codebase.
+                            No quote entered yet. Munachi can update client feedback for {companyName} directly in the codebase.
                           </p>
                         </div>
                       </div>
@@ -112,7 +121,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ testimonials }) => {
                       </div>
                     ) : (
                       <div className="font-sans text-[10px] font-medium text-brand-muted italic uppercase select-none">
-                        Owner / Manager, {brandTags[idx]}
+                        Owner / Manager, {companyName}
                       </div>
                     )}
                   </div>

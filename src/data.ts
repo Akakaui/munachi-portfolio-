@@ -1,4 +1,5 @@
 import { Service, SkillPillar, ToolItem, CaseStudy, Testimonial, PortfolioSettings } from "./types";
+import profileImage from "./assets/profile.jpg";
 
 export const defaultSettings: PortfolioSettings = {
   accentColor: "#a33800", // Terracotta
@@ -16,7 +17,7 @@ export const defaultSettings: PortfolioSettings = {
     "I work best with businesses that sell real products: the fashion label trying to move inventory, the e-commerce store ready to scale, the car dealership that thinks social media isn't for them, and the agribusiness ready to build a real audience. I understand how to make products—whether you can hold them in your hand or access them on a screen—feel highly desirable online, and I know how to turn that desire into action.",
     "I'm not the cheapest option. I'm the one that works."
   ],
-  imageUrl: "", // empty means geometric visual placeholder
+  imageUrl: profileImage, // imported profile portrait
   instagramUrl: "https://instagram.com/",
   linkedinUrl: "https://linkedin.com/in/"
 };
@@ -221,8 +222,8 @@ export const defaultTestimonials: Testimonial[] = [
   },
   {
     id: "t3",
-    clientName: "Chinedu Zextus",
-    role: "Partner, Zext Ventures",
-    quote: "In professional services, consistency and tone are everything. Munachi keeps our channels active, polished, and authoritative every week. Our profile visits and inbound partner inquiries have increased significantly since he took over."
+    clientName: "Amara Nwosu",
+    role: "Founder, Vibe & Stitch",
+    quote: "We were sitting on dead inventory for weeks until Munachi took over. He scripted styling reels that showed our pieces in motion, launched a targeted Meta campaign, and we sold out the entire collection in 10 days. He understands inventory velocity, not just vanity metrics."
   }
 ];

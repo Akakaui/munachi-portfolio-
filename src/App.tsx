@@ -27,7 +27,13 @@ export default function App() {
     try {
       const stored = localStorage.getItem(LOCAL_STORAGE_SETTINGS_KEY);
       if (stored) {
-        return JSON.parse(stored);
+        const parsed = JSON.parse(stored);
+        // Automatically inject the profile image if it was previously empty/unset
+        if (!parsed.imageUrl && defaultSettings.imageUrl) {
+          parsed.imageUrl = defaultSettings.imageUrl;
+          localStorage.setItem(LOCAL_STORAGE_SETTINGS_KEY, JSON.stringify(parsed));
+        }
+        return parsed;
       }
     } catch (e) {
       console.error("Failed to load settings from localStorage", e);
@@ -39,7 +45,19 @@ export default function App() {
     try {
       const stored = localStorage.getItem(LOCAL_STORAGE_TESTIMONIALS_KEY);
       if (stored) {
-        return JSON.parse(stored);
+        const parsed = JSON.parse(stored);
+        // Automatically migrate the old Chinedu Zextus testimonial to the new realistic Amara Nwosu testimonial
+        const migrated = parsed.map((item: Testimonial) => {
+          if (item.id === "t3" && item.clientName === "Chinedu Zextus") {
+            const defT3 = defaultTestimonials.find(t => t.id === "t3");
+            return defT3 || item;
+          }
+          return item;
+        });
+        if (JSON.stringify(migrated) !== JSON.stringify(parsed)) {
+          localStorage.setItem(LOCAL_STORAGE_TESTIMONIALS_KEY, JSON.stringify(migrated));
+        }
+        return migrated;
       }
     } catch (e) {
       console.error("Failed to load testimonials from localStorage", e);
